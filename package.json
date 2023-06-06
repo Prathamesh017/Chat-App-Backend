@@ -7,9 +7,7 @@
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
-    "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run start\" \"npm run client\"",
-    "build": "cd server && npm install && cd ../client && npm install && npm run build"
+   
   },
   "author": "Prathamesh Thakare",
   "license": "ISC",
