@@ -22,9 +22,9 @@ app.use(express.json())
 app.use(cors())
 await connectDB()
 
-app.get('/', (req, res) => {
-//   res.send('hello world')
-})
+// app.get('/', (req, res) => {
+// //   res.send('hello world')
+// })
 app.use('/api/user', userRouter)
 app.use('/api/chat', chatsRouter)
 app.use('/api/message', messageRouter)
