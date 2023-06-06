@@ -17,9 +17,11 @@ cloudinary.v2.config({
   api_secret: process.env.API_SECRET,
   cloud_name: process.env.CLOUD_NAME,
 })
+
 app.use(express.json())
 app.use(cors())
 await connectDB()
+
 app.use('/api/user', userRouter)
 app.use('/api/chat', chatsRouter)
 app.use('/api/message', messageRouter)
@@ -27,8 +29,8 @@ app.use(
   cors({
     origin: [process.env.FRONTEND_URL],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true
-  })
+    credentials: true,
+  }),
 )
 app.use('/', (req, res) => {
   res.send('hello world')
