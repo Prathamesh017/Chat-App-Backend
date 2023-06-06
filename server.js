@@ -30,6 +30,9 @@ app.use(
     credentials: true
   })
 )
+app.use('/', (req, res) => {
+  res.send('hello world')
+})
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`.yellow)
 })
