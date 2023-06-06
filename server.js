@@ -22,6 +22,9 @@ app.use(express.json())
 app.use(cors())
 await connectDB()
 
+app.use('/', (req, res) => {
+  res.send('hello world')
+})
 app.use('/api/user', userRouter)
 app.use('/api/chat', chatsRouter)
 app.use('/api/message', messageRouter)
@@ -32,9 +35,7 @@ app.use(
     credentials: true,
   }),
 )
-app.use('/', (req, res) => {
-  res.send('hello world')
-})
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`.yellow)
 })
